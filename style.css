@@ -51,18 +51,20 @@
   color: white;
 }
 
-.menu > div:hover .sub-menu li {
-  transform: scale(1);
-}
-
-.menu > div:hover .sub-menu {
-  transform: scale(1);
-}
-
 .menu a:link, a:visited {
   color: #e43b44;
   text-decoration: none;
 }
+
+#jouer_button{
+  background-color: #ffee00;
+  border: 4px black solid;
+}
+
+#jouer_button:hover{
+  background-color: #e43b44;
+}
+
 
 /* ---------- CONTENT ---------- */ 
 
