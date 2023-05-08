@@ -2,107 +2,277 @@
 
 <html>
 
+<!-- On définit ici le set de charactères du site web (utf-8), le nom de la page marqué dans l'onglet du navigateur et quel fichier de style en css est utilisé pour cette page. -->
+  
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Le Jeu de L'Humanité - ACCEUIL</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body>
 
-<!-- ---------- TOP ---------- -->
+  <!-- ---------- TOP ---------- -->
+  <!-- Contient le logo du site web. -->
   
-  <div class="top">
-    <img src="https://i.ibb.co/Z1wj197/Le-Jeu-de-L-Humanit-Logo.png" alt="Le-Jeu-de-L-Humanit-Logo" border="0">
-  </div>
 
-<!-- ---------- MENU ---------- -->
-
-  <div class="menu">
-   <div><h3><a href="#informations">INFORMATIONS</a></h3></div>
-   <div id="jouer_button"><h3><a href="#jouer">JOUER</a></h3></div>
-   <div><h3><a href="#nous_contacter">NOUS CONTACTER</a></h3></div>
-  </div>
-
-<!-- ---------- INFORMATIONS ---------- -->
-
-  <br><br><br>
+      <div class="top">
+        <img src="https://i.ibb.co/Z1wj197/Le-Jeu-de-L-Humanit-Logo.png" alt="Le-Jeu-de-L-Humanité-Logo" border="0">
+      </div>
+    
+  <!-- ---------- MENU ---------- -->
+  <!-- Contient le menu : à chaque fois que l'on clique sur une des div cela change la position de la fenêtre à l'endroit concerné grâce à une fonction JavaScript. La balise header nous permet de définir l'en-tête et une fois dans le CSS de pouvoir faire en sorte qu'il reste toujours affiché en haut de l'ecran. -->
+  <header> 
+      <div class="menu">
+       <div onclick='window.location.hash = "#informations"';><h3>INFORMATIONS</h3></div>
+       <div onclick='window.location.hash = "#telecharger"';><h3><h3>TELECHARGER</h3></div>
+       <div onclick='window.location.hash = "#nous_contacter"';><h3><h3>NOUS CONTACTER</h3></div>
+      </div>
+  </header>
   
-  <h1>VOUS ETES SUR UNE ANCIENNE VERSION DU SITE WEB, NOUVELLE VERSION <a href="https://le-jeu-de-lhumanite.ctrlant.repl.co">ICI</a></h1>
+  <!-- ---------- INFORMATIONS ---------- -->
+  <!-- Contient les différentes informations liées au projet, ainsi que des captures d'écran du jeu et une vidéo de Romain présentant brièvement le projet. Les différentes classes que l'on retrouve dans le code permettent de définir le style de la div en fonction que cela soit un titre ou un paragraphe, les identifiants eux permettent de faire le dégradé de couleur, faire le style de l'image et les animations qui lui sont liées ou de servir d'ancre pour le code JavaScript du menu (lorsque qu'on clique sur une div). -->
   
-  <div class="title"  id="informations">
-    <h1>INFORMATIONS</h1>
-  </div>
-
-  <div class="paragraph">
-    <h1>Qu'est-ce que c'est?</h1>
-    <p>Notre projet de NSI est la simulation de deux groupes (un rouge et un bleu) qui vivent sur une carte générée
-      aléatoirement. <br><br>-  Les personnages, se déplacent, se battent, se reproduisent, chassent, dorment... (car le jeu possède un cycle jour/nuit) pendant un certain nombre de tours : à la fin seul l'un des deux groupes survivera le mieux. <br><br>-  Sa survie dépendera des caractéristiques des différents membres (Comme par ex : L'Agilité : Pourcentage de chance de tuer un Poulet (la source de nourriture du jeu), La Vitesse : Pourcentage de chance de se déplacer à chaque tour ou encore la Force : Pourcentage de chance de tuer un énnemi). <br><br>-  Ces caractéristiques sont attribuées aléatoirement en début de partie aux personnages fondateurs et sont distribuées avec une part de hasard à leurs enfants lors de la reproduction. <br><br>-  Un autre élement éssentiel à la survie d'un groupe et leur gestion d'énergie car ne plus en avoir est fatal (chaque action en coûte que ça soit se déplacer, combattre, attraper, se reproduire... mais manger en redonne). <br><br>-  Notre jeu est aussi entièrement configurable que ça soit dans le nombre de tours, la taille de la carte, le nombre d'élements, la quantité d'energie nécessaire à chaque action, le nombre de personnages par équipe et bien bien plus encore...</p>
-  </div>
-
-
-  <div class="paragraph">
-    <h1>L'équipe</h1>
-    <p>Notre groupe est composé de 3 personnes :</p>
-    <ul>
-      <li>Romain Bensiliman</li>
-      <li>Antoine Avelino-Ferrier</li>
-      <li>Robin Burckbuchler</li>
-    </ul>
-    <p>
-    Chaque personne a contribuée pour donner vie à ce projet, voici comment a été réparti le travail.
-    <br>
-    - Antoine s'est occupé de faire toutes les textures, à fait la page web, à fait les menus ainsi que les "fonctions utilitaires".
-    <br>
-    - Robin à aidé à faire la page web et de la génération sur le projet.
-    <br>
-    - Romain quand à lui, à fait le reste avec l'aide de ses camarades.
-    </p>
-  </div>
-
-<!---------------- NOUS CONTACTER ------------------->
-
-  <br><br><br>
+    <br><br><br>
+    
+    <div class="title"  id="informations">
+      <h1>INFORMATIONS</h1>
+    </div>
   
-  <div class="title" id="nous_contacter">
-    <h1>NOUS CONTACTER</h1>
-  </div>
+    <div class="paragraph" id="grad3">
+
+      <!-- ---------- L'IDEE ---------- -->
+      
+      <h1>L'Idée :</h1>
+      
+      <p>Notre idée de départ vient de <b>2 sources d’inspirations</b> : <br> - <a href="https://fr.wikipedia.org/wiki/Jeu_de_la_vie" target="_blank"><b>Le Jeu de la Vie</b></a> (d'ou le nom de notre jeu) de John Horton Conway. <br> - Ainsi que la <b>simulation de sélection naturelle du youtubeur <a href="https://www.youtube.com/watch?v=0ZGbIKd0XrM" target="_blank">Primer</a></b> ou plûtot <b>le principe de sélection naturielle</b> exsistant depuis la nuit des temps sur Terre. <br><br> Notre objectif est de simuler des <b>choses complexes</b> à partir de <b>règles très simples</b>.  Par exemple, dans « Le Jeu de la Vie : une grille de case avec des carrés noirs et blancs possédant des règles primaires très simples, on peut créer de véritables systèmes complexes, comme par exemple une horloge digitale ! : <br><br>
+        
+      <img src="https://i.stack.imgur.com/mz0iM.gif" id="image" title="Une horloge fait avec le Jeu de la Vie, uniquement constitué de quelques règles simples."> <br><br> 
+        
+C’est la même choses pour <b>tous les êtres vivant</b> : Des molécules s’assemblent en suivant certaines <b>règles primaires</b>, qui forment des molécules de <b>plus en plus complexes</b> jusqu’à obtenir des êtres vivants. <br><br>
+        
+      <img src="https://cms.alloprof.qc.ca/sites/default/files/styles/1200w/public/2021-02/niveaux-organisation-organisme-%28s1248-1%29_0.jpg?itok\u003dy7DUrRrD" id="image" title="Des atomes, qui forment des molécules, elles mêmes formant des cellules puis des tissus et ainsi de suite..."> 
+        
+        <br><br> Nous avons donc opté pour un jeu faisant un <b>mix des 2 influences</b> citées plus haut : <br> Nous avons utilisé des <b>personnages</b> à la place des <b>carrés noirs du Jeu de la Vie</b> et une <b>pseudo sélection naturelle avec des variables aléatoires</b> comme pour la <b>simulation de Primer.</b><br><br></p> 
+
+      <!-- ---------- LES OBJECTIFS ---------- -->
+
+      <h1>Les Objectifs :</h1>
+      
+      <p>Notre objectif est donc de <b>simuler des systèmes complexes</b> à partir de règles <b>très simples</b>. <br> Nous n’avons pas la prétention de dire que nous allons simuler la vie animale, voir même humaine, mais nous allons essayer d'en faire un très gros approché dans un système <b>simple avec peu de variables</b>. <br><br> Nous voulons observer à travers notre projet une <b>sélection des individus</b> et une<b> évolution de l’espèce qui s’adapte à son environnement</b>. Nous voulons aussi créer un site web de présentation du projet.</p> <br><br>
+      
+      <img src="https://thekidshouldseethis.com/wp-content/uploads/2019/05/natural-selection-primer.gif" id="image" title="Une espèce évoluant en fonction de son environnement : exemple ici avec la simulation du Youtuber Primer"> <br>
+
+      <!-- ---------- L'ORGANISATION DU TRAVAIL ---------- -->
+
+      <h1>L'Organisation du Travail :</h1>
+      
+      <p><b>Romain Benslimane</b>, qui à eu l’idée de ce projet, possédant un niveau plus élevé en Python s'est naturellement dirigé vers les <b>parties du programme les plus complexes comme le déplacement, les statistiques...</b> <br><br> <b>Antoine Avelino-Ferrier</b>, à fait quant à lui toute la <b>partie graphique du projet</b> : que ce soit des <b>assets</b>, au <b>design du site</b> en passant par la <b>création du logo</b> et du <b>menu principal du jeu</b>, mais pas que : Il a aussi développé cet <b>incroyable site web</b> avec l'aide de Robin et à realisé les <b>fonctions utilitaires</b> du projet : éssentielles à son bon fonctionnement. <br><br> <b>Robin Burckbuchler</b>, pour sa part à <b>aidé Antoine pour la page web</b>, et pour le projet : il s’est occupé de la <b>génération de la carte, des personnages, du décor et des animaux l’occupant</b>. Et d’autres <b>petites fonctions variées à droite à gauche du code</b>. <br><br> Naturellement, <b>l’entraide à été plus que présente</b> pendant cette longue période de travail et on ne peut compter le nombre d’heures passées à se parler ensemble sur Discord pour parler de l’avancement et pour s'entraider.
+</p> <br><br>
+
+      <img src="https://www.managersenmission.com/wp-content/uploads/2020/05/3014541-light.jpg" id="image" title="Une bonne organisation est la clé d'un projet réussi !"> <br>
+
+      <!-- ---------- LES ETAPES DU PROJET ---------- -->
+      
+      <h1>Les Etapes du Projet :</h1>
+
+      <ul>
+        
+      <li><b>Création pour tester notre idée d’une matrice affichée dans le terminal en ASCII</b> avec des points pour représenter les cases et des "O" pour représenter les personnages. Cela à permis de prototyper notre projet, de voir ce qui allait être compliqué pour la suite, de revoir nos objectifs et aussi de s'attribuer les différentes tâches.</li> <br>
+
+        <li><b>Refonte du projet total au propre et avec pygame</b> (apprentissage nécessaire). En effet, l’idée de matrice ne marchait pas avec pygame il a donc fallut tout refaire pour que cela fonctionne avec ce dernier.</li> <br>
+
+        <li><b>Mise en place des graphismes, animations, collisions, variables de simulation, nourriture...</b> au fur et à mesure des semaines entre la renfonte et la date limite.</li> <br>
+        <li>Projet fini un jour avant la date limite, nous avons profité de ce dernier jour pour faire de <b>nombreuses corrections de bugs, des petites améliorations à droite à gauche</b> et pour pouvoir tester pour <b>quelles valeur des variables la simulation est la meilleure</b>.</li> <br>
+        
+      </ul>
+
+      <img src="https://www.groupe-fimac.fr/wp-content/uploads/2021/11/Etapes.jpg" id="image" title="Les Etapes d'un Projet Informatique"> <br>
+
+      <!-- ---------- LE FONCTIONNEMENT ---------- -->
+
+      <h1>Le Fonctionnement :</h1>
+
+      <p>> Voici les <b>LOIS DE BASE</b> de notre simulation : <br><br>
+        
+Il y a <b>deux groupes de personnages</b> : Les <b>rouges</b> et les <b>bleus</b> <br>
+et un <b>groupe de nourriture</b> : Les <b>poulets</b> <br><br>
+
+<b>1.</b> - Un personnage rouge <b>attaque</b> toujours un personnage bleu(énnemi) et <b>inversement</b> quand ils se <b>rencontrent.</b> <br><br>
+
+<b>2.</b> - Un personnage qui est <b>à côté d’un poulet</b> essaye de le <b>manger</b>. <br><br>
+
+<b>3.</b> - Un personnage <b>à côté d’un personnage</b> de sa <b>même couleur</b> se <b>reproduit</b> avec lui. <br><br>
+
+<b>4.</b> - Chaque personnage essaye de <b>se déplacer</b> à <b>chaque tour</b>. <br><br>
+
+<img src="https://i.ibb.co/9GdTWgq/image.png" id="image" title="Capture d'Ecran du Jeu de L'Humanité"> <br><br>
+
+        
+        
+> Chaque personnage à <b>4 VARIABLES ALEATOIRES</b> :  <br><br>
+
+<img src="https://idleon.wiki/wiki/images/a/af/Strafe.png"> - <b>La Vitesse</b> (SPEED) : Elle détermine la probabilité qu’un personnage <b>se déplace</b> d’une case à chaque tour. <br><br>
+
+<img src="https://idleon.wiki/wiki/images/f/ff/Fist_of_Rage.png"> - <b>La Force</b> (POWER) : Elle détermine la probabilité que <b>l’attaquant tue l’attaqué</b>. Si l’attaque <b>échoue</b>, l’attaqué <b>s’enfuit</b>. <br><br>
+
+<img src="https://idleon.wiki/wiki/images/b/bd/Quickness_Boots.png?20220409031528"> - <b>L’agilité</b> (AGILITY) : Elle détermine la probabilité qu’un personnage <b>attrape</b> un poulet. Si il <b>échoue</b>, le poulet <b>s’enfuit</b>. <br><br>
+
+<img src="https://idleon.wiki/wiki/images/3/3f/Shining_Beacon_Of_Egg.png"> - <b>La fertilité</b> (FERTILITE) : Elle détermine la probabilité qu’un personnage <b>se reproduise</b> avec un autre personnage de la <b>même couleur</b>. En cas de reproduction, il est <b>assuré</b> d’avoir un enfant. <br><br>
+
+L’<b>importance</b> des variables est dans <b>l’ordre donné</b>, il attaquera en priorité un personnage puis sinon, mangera un poulet puis se reproduira en cas de situation avec les conditions nécessaires. <br><br>
+
+Chaque variable est déterminée entre <b>0 et 100</b> (et correspond au <b>pourcentage</b>). <br><br><br>
+
+
+        
+<img src="https://idleon.wiki/wiki/images/1/1d/Lightning_Barrage.png"><b><b> > L'ENERGIE</b></b> <br><br>
+Chaque personnage au <b>début de chaque tour</b> à son <b>énergie à 100</b>. <br>
+Les actions suivantes font <b> perdre ou gagner </b> de l’énergie : <br>
+- <b>Etre vivant </b> (le personnage perd de l’energie chaque tour). PERDRE <br>
+- <b>Manger un poulet </b>. GAGNER <br>
+- <b>Tuer un autre </b> PERDRE <br>
+- <b>Se reproduire </b>. PERDRE <br>
+- <b>Se déplacer </b>. PERDRE <br><br>
+
+Noter que <b>l’énergie gagnée ou perdue</b> après chaque action peut être <b>déterminée</b> à l’avance dans les <b>paramètres</b>. <br><br><br>
+
+
+        
+<img src="https://idleon.wiki/wiki/images/5/58/Essence_Transferral.png"><b><b> > LES CYCLES ET LES CAMPEMENTS :</b></b> <br><br>
+        
+- Un jour dure un <b>nombre de tour</b> définit à l’avance dans les paramètres. <br>
+- A la <b>fin du jour</b>, chaque personnage <b>rentre dans son campement</b>. Le campement d’un personnage est <b>créé</b> sur la <b>première case où le personnage apparaît</b> (lors de sa naissance ou au début du jeu). Le campement d’un personnage <b>ne bouge jamais</b>. <br>
+- Dans le cas ou un personnage <b>meurt</b>, son campement est <b>détruit à la fin du jour</b>. <br>
+- Chaque personnage <b>récupère son énergie</b> la nuit en <b>dormant</b> chez lui. <br>
+- Dans le cas ou 2 personnages se <b>reproduisent</b>, son campement est <b>placé à l’endroit ou était placé le père ou la mère</b>. Le personnage enfant <b>apparaîtra dans son campement le jour suivant</b>. <br>
+Au moment ou <b>l’énergie</b> d’un personnage est <b>inférieure ou égale 0</b>, il <b>meurt directement</b>.<br><br></p>
+
+      
+
+      <!-- ---------- L'AVANCEMENT ---------- -->
+
+      <h1>L'Avancement :</h1>
+
+      <p><b>L’objectif minimum initial</b> de notre projet et du site web ont étés <b>atteint et même plus</b>. <br><br>
+
+Notre <b>objectif maximal</b> quant à lui vraiment <b>très large, trop large</b> et n’a <b>pas été atteint et est très loin d’être atteint</b> car nous avions pour but de créer de véritables civilisations à partir de règles très simples en ajoutant des règles de sociabilité, ainsi que la découverte du feu et l’invention des remparts, armes, bateau… comme on peut retrouver dans le jeu Civilization VI. Mais c'était <b>beaucoup trop long</b> à faire donc nous avons préféré nous concenter sur l'essentiel. <br><br>
+
+Nous n’avons <b>pas</b> vraiment <b>énormement d’idées d’améliorations réalisables à l'instant</b> si ce n’est peut-être de rajouter plus de variables pour créer des systèmes plus complexes et réalistes. Par exemple la masse du personnage ou des formules de physique réelle pour calculer l’énergie perdue pour chaque action par exemple.
+
+Pour le site web quant à lui il à fait plus que ce qu'on avait prévu de lui, mais il y aurait fallut peut-être un menu pour aller à chaque paragraphe différent, des intégrations JavaScript/PHP pour indiquer le nombre de visiteurs ainsi que le nombre de téléchargements et peut-être un meilleur design de la partie Informations. <br><br> </p>
+
+      <img src="https://www.jeunes-bfc.fr/wp-content/uploads/2021/12/conseil_evolution_professionnelle.png" title="L'Avancement du Projet" id="image"> <br>
+
+      <!-- ---------- LES DIFFICULTES RENCONTREES ---------- -->
+
+      <h1>Les Difficultés Rencontrées :</h1>
+
+      <p>Une <b>difficulté majeure</b> a été rencontrée : <br><br>
+        
+Le <b>choix de l’architecture et du fonctionnement initial de la carte</b> avec les cases : <br><br>
+        
+Nous avons <b>commencé notre projet avec une certaine architecture</b> (sous forme de matrice) mais cela c’est avéré <b>impossible de continuer ainsi avec pygame</b>. L'<b>affichage de notre jeu</b> à donc été un <b>réel problème</b>. <br><br>
+        
+Deux autres <b>difficultés mineures</b> ont été rencontrées : <br><br>
+        
+Nous aurions put utiliser les <b>classes</b> pour grandement améliorer la performance et la facilité à créer le projet, mais cela est interdit pour participer au concours, nous avons donc utiliser une <b>autre solution beaucoup plus complexe</b> à mettre en place. <br> 
+<b>L’affichage des animations</b> : il a fallut calculer chaque <b>image intermédiaire entre les 2 positions des personnages</b> à chacun de leur déplcament, ce qui été très <b>compliqué</b> à faire. <br><br></p>
+
+      <img src="https://global-uploads.webflow.com/5f85835b24efbc2725495cbf/6334aaae977ab4a07d4d2837_Andjaro-Banniere-Difficult%C3%A9s-recrutement.jpg" title="Les Difficultés Rencontrées dans le Projet" id="image"> <br>
+
+      <!-- ---------- APPROCHES MISES EN OEUVRE POUR VERIFIER L'ABSENCE DE BUGS ET S'ASSURER DE LA FACILITE D'UTILISATION DU PROJET  ---------- -->
+
+      <h1>Approches mises en œuvre pour vérifier l’absence de bugs et s’assurer de la facilité d’utilisation du projet :</h1>
+
+      <p>Pour vérifier qu’il n’y a <b>pas de bug</b>, des <b>prints ont été ajoutés</b> partout permettant d’avoir des "logs" de chaque action. Les <b>bugs rencontrés</b> étaient la plupart du temps des <b>bugs graphiques</b> (personnage qui disparaît, qui se téléporte...). <br>
+La <b>facilité d’utilisation</b> du projet est assuré par un <b>menu</b> qui a été rajouté par Antoine pour <b>éviter de modifier le fichier paramètres.json à la main</b>. <br>
+Il n’y a rien d’autre a faire que <b>choisir des paramètres</b> et de <b>lancer la simulation</b> : le projet est donc <b>très facile d'utilisation</b>.</p> <br><br>
+
+      <img src="https://www.lektum.com/upload/bug-informatique.jpg" title="Les Bugs Informatique" id="image"> <br>
+
+      <!-- ---------- STRATEGIE DE DIFFUSION, ANALYSE CRITIQUE DU RESULTAT ---------- -->
+      
+      <h1>Stratégie de Diffusion, Analyse critique du résultat :</h1>
+
+      <p>Notre <b>stratégie de diffusion</b> est de faire des pubs en jouant sur le fait que c’est <b>divertissant de voir des groupes</b> se reproduire, évoluer, mourir, s’entre-tuer, ne nourrir.. à trés grande vitesse. C’est comme voir une <b>timelapse d'un passage piéton</b> par exemple. Cela donne un sentiment assez <b>gratifiant</b> de les voir tous <b>évoluer indépendamment d’une action humaine.</b> <br><br>
+
+Très honnêtement, si c’était à refaire nous ne <b>changerions pas grand chose</b> si ce n’est <b>l’architecture du projet</b> car à cause d’une <b>mauvaise architecture initiale</b>, nous avons pratiquement dut <b>refaire le projet en entier 2 fois</b>. <br>
+Nous aurions peut-être aussi <b>commencé plus tôt</b> pour avoir <b>plus de temps</b> et faire une simulation encore <b>plus aboutite et plus complète/complexe.</b></p> <br><br>
+
+      <img src="https://www.marketing-professionnel.fr/wp-content/uploads/2017/05/strategie-content-marketing-contenu-marque-mecenat.jpg" title="La Diffusion du Projet" id="image"> <br>
+
+      <!-- La vidéo est incrustée dans le site web grâce à une iframe que l'on peut retrouver sur le site tube-sciences hébergant la vidéo (en faisant un click droit sur une vidéo). -->
+
+      <h1>Quelques Captures d'Ecran du Jeu et sa Vidéo Explicative :</h1>
+
+      <a href="https://ibb.co/YXYXwQR"><img src="https://i.ibb.co/tzkzFKm/image.png" title="L'Ecran Titre du Jeu de l'Humanité" id="screenshot"></a>
+
+      <a href="https://ibb.co/hdRHsf0"><img src="https://i.ibb.co/SmX0NrS/image.png" title="Le Jeu au Lancement de la Simulation" id="screenshot"></a>
+
+      <a href="https://ibb.co/TrN8t2H"><img src="https://i.ibb.co/9GdTWgq/image.png" title="Le Jeu du Cours de la Simulation"  id="screenshot"></a>
+      
+      <iframe title="NSI - THE GAME OF HUMANITY" src="https://tube-sciences-technologies.apps.education.fr/videos/embed/fd43ac1e-f783-40dd-bb18-94ab169011fd" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" width="640" height="360" frameborder="0"></iframe>
+    </div>
+ 
+  <!---------------- TELECHARGER ------------------->
+  <!-- Dans cette partie on peut retrouver différents boutons (images cliquables, pas des boutons html) menant à différents liens pour pouvoir télécharger/voir le projet de différentes façons (via un .exe, via le code source, via replit et via github). target="_blank" sert à ouvrir le lien dans une nouvelle fenêtre.-->
   
-  <div class="paragraph">
-    <h1>Discord :</h1>
+    <br><br><br>
+  
+    <div class="title" id="telecharger">
+      <h1>TELECHARGER</h1>
+    </div>
+    <div class="paragraph" id="grad1">
+      <p>Ici vous pouvez retrouver différentes façons de télécharger/accéder au jeu : Par un executable Windows (impossible de voir le code il est compilé), Par le script Python (nécessitera d'avoir Python, Pygame, Pygame-menu et Matplotlib pour lancer le jeu), En ligne avec Replit (possibilité de jouer au jeu) ou avec Github (pratique pour voir le code sans télécharger quoi que ce soit).</p>
+      <div class="grid">
+        <div class="button">
+            <a href="https://download1527.mediafire.com/rq56fyfymm6gD1IIWiGu4G2VHh-oPkBLgaVmL40otS3CU4HHglCUlIAdbpH3_EPid1bkhpJ-jzGK0oXFtsKbLh9DsHpMj5hPObo7gJ48FcYJbebe_sHmBLA_vNDfj4kvVp0C5xS1I2ng7LLgQRdGk6rrduW5M5y4_Ss4409qFpQ/t65v11jk5neajts/Le+Jeu+de+l%5C%27Humanit%C3%A9+%5Bv1.0%5D.zip"><img src="https://www.1min30.com/wp-content/uploads/2017/04/Symbole-Windows.png"></a>
+        </div>
+        <div class="button">
+          <a href="https://github.com/romain007/THE-GAME-OF-HUMANITY/archive/refs/heads/main.zip"><img src="https://i.ibb.co/C5tbg7Q/python-logo.png" target="_blank"></a>
+        </div>
+        <div class="button">
+          <a href="https://replit.com/@romainbensliman/THE-GAME-OF-HUMANITY?v=1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/1200px-New_Replit_Logo.svg.png" target="_blank"></a>
+        </div>
+        <div class="button">
+          <a href ="https://github.com/romain007/THE-GAME-OF-HUMANITY" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  
+  <!---------------- NOUS CONTACTER ------------------->
+  <!-- Dans cette partie on retrouve plusieurs moyens de nous contacter (via Email ou via Discord).-->
+  
+    <br><br><br>
+    
+    <div class="title" id="nous_contacter">
+      <h1>NOUS CONTACTER</h1>
+    </div>
+    
+    <div class="paragraph" id="grad1">
+      <p>Si vous avez des questions, des demandes... quoi que ce soit qui concerne le jeu vous pouvez nous contacter à partir des options suivantes :</p>
+      <h1>Email :</h1>
       <p><ul>
-      <li><b>Antoine :</b> Ant#7144</li>
-      <li><b>Robin :</b> Teammollosse#0287</li>
-      <li><b>Romain :</b> ORAMI#2591</li>
+        
+        <!-- En mettant nos adresses e-mail dans le href du lien on peut ouvrir directement le client mail de l'utilisateur du site web lorsqu'il clique sur le lien.-->
+        
+        <li><b>Antoine :</b> <a href="antoine.avelino3010@gmail.com">antoine.avelino3010@gmail.com</a></li>
+        <li><b>Robin :</b> <a href="robin.burckbuchler2006@gmail.com">robin.burckbuchler2006@gmail.com</a></li>
+        <li><b>Romain :</b> <a href="marcokoor1@gmail.com">marcokoor1@gmail.com</a></li>
       </p></ul>
-  </div>
-
-  <div class="paragraph">
-    <h1>Email :</h1>
-    <p><ul>
-      <li><b>Antoine :</b> antoine.avelino3010@gmail.com</li>
-      <li><b>Robin :</b> robin.burckbuchler2006@gmail.com</li>
-      <li><b>Romain :</b> marcokoor1@gmail.com</li>
-    </p></ul>
-  </div>
-
-<!---------------- JOUER ------------------->
-
-  <br><br><br>
-
-  <div class="title" id="jouer">
-    <h1>JOUER</h1>
-  </div>
-  <div class="paragraph">
-    <img id="button" src="https://www.1min30.com/wp-content/uploads/2017/04/Symbole-Windows.png">
-    <img id="button" src="https://i.ibb.co/C5tbg7Q/python-logo.png">
-    <a href="https://replit.com/@romainbensliman/THE-GAME-OF-HUMANITY?v=1"><img id="button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/1200px-New_Replit_Logo.svg.png" target="_blank"></a>
-    <a href ="https://github.com/romain007/THE-GAME-OF-HUMANITY" target="_blank"><img id="button" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a>
-  </div>
+    </div>
   
+    <div class="paragraph" id="grad2">
+        <h1>Discord :</h1>
+        <p><ul>
+          <li><b>Antoine :</b> Ant#7144</li>
+          <li><b>Robin :</b> Teammollosse#0287</li>
+          <li><b>Romain :</b> ORAMI#2591</li>
+        </p></ul>
+    </div>
+
 </body>
 
 </html>
