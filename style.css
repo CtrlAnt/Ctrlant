@@ -2,7 +2,8 @@
 
 /* On importe la police d'écriture utilisée pour le site (Montserrat) et toutes ses variantes de taille.*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(
+"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Défini l'arrière plan du site, qu'il soit fixe, qu'il soit centré sur l'écran, qu'il ne se repète pas (sinon il se répete comme un patern si il n'est pas assez grand pour l'écran), qu'il prenne toute la taille de l'écran et soit affiché derrière tout le contenu de la page web. */
 
@@ -12,8 +13,8 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height:100%;
-  font-family: 'Montserrat', sans-serif;
+  min-height: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ---------- TOP ---------- */
@@ -22,16 +23,16 @@ html {
 
 .top {
   background-color: #fee761;
-  border: 3px black solid;  
-  border-radius : 5px;
+  border: 3px black solid;
+  border-radius: 5px;
   color: #e43b44;
   padding: 5px 5px;
   text-align: center;
-} 
+}
 
 .top img {
-    height: 33%;
-    width: 33%;
+  height: 33%;
+  width: 33%;
 }
 
 /* Permet d'épingler le header (contenant la div top et menu en haut de l'écran). */
@@ -51,6 +52,13 @@ header {
   justify-content: space-between;
 }
 
+/* Style des liens du menu et de la div */
+
+.menu a {
+  color: black;
+  text-decoration: none;
+}
+
 .menu div {
   align-items: center;
   background-color: #fee761;
@@ -64,6 +72,16 @@ header {
   width: 33%;
 }
 
+/*Affiche le sous-menu quand l'utilisateur "hover" le menu et laisse afficher le menu quand l'utilisateur à sa souris sur le sous-menu.*/
+
+.menu > div:hover .sub-menu li {
+  transform: scale(1);
+}
+
+.menu > div:hover .sub-menu {
+  transform: scale(1);
+}
+
 /* Fait en sorte que quand l'utilisateur passe sa souris sur un des boutons du menu, il change de couleur ainsi que le texte présent dessus.*/
 
 .menu > div:hover {
@@ -71,9 +89,44 @@ header {
   color: white;
 }
 
-/* ---------- CONTENT ---------- */ 
+/* ---------- SUBMENU ---------- */
 
-/* Style des divs contenant les titres et les paragraphes ainsi que des images illustartives : */
+/* Style et animation du menu, transform: scale(0) -> pour que le menu soit invisible au départ, transform-origin: left -> pour que le sub-menu parte de la gauche quand il s'ouvre, transition: all 300ms ease-in-out -> permet de faire une transition fluide en 300ms */
+
+.sub-menu {
+  padding: 0;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: left;
+  transition: all 300ms ease-in-out;
+  top: 80%;
+  width: 100%;
+}
+
+.sub-menu p {
+  background: #fee761;
+  border: 3px black solid;
+  border-radius: 5px;
+  color: black;
+  margin: 0px;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.sub-menu p:hover {
+  background: #e43b44;
+  cursor: pointer; /* Change le style du curseur quand on passe la souris dessus */
+}
+
+#sub-menu_link {
+  color: black;
+  text-decoration: none; /* Permet de ne pas souligner les liens du sous-menu */
+}
+
+/* ---------- CONTENT ---------- */
+
+/* Style des divs contenant les titres et les paragraphes ainsi que des images illustartives et des titres des partie : */
 
 .title {
   background-color: #e43b44;
@@ -90,14 +143,19 @@ header {
   padding: 1%;
 }
 
-.title, .paragraph{
+.title,
+.paragraph {
   border-radius: 5px;
+}
+
+#center{
+  text-align: center;
 }
 
 /*display:block, margin-left et margin-right: auto pour pouvoir center l'image au centre de l'écran.
 -webkit-transition et transition pour définir la durée que l'image met à retourner à sa taille initiale.*/
 
-#image{
+#image {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   display: block;
@@ -112,8 +170,8 @@ header {
 
 /*Pour pouvoir agrandir l'image en 0.2s par rapport au centre quand l'utilisateur passe la souris dessus. animation-direction:alternate pour faire en sortie que l'image est une animation dans le sens retour, transform/transition/-webkit-transition définissent les paramètres de l'animation.*/
 
-#image:hover{
-  animation-direction:alternate;
+#image:hover {
+  animation-direction: alternate;
   transform: scale(2, 2);
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -132,7 +190,7 @@ header {
 /* Permet d'augementer la taille des boutons en 0.1s lorsque l'utilisateur passe la souris dessus. */
 
 .button:hover {
-  animation-direction:alternate;
+  animation-direction: alternate;
   transform: scale(1.12, 1.12);
   transition: all 0.1s;
   -webkit-transition: all 0.1s;
@@ -140,7 +198,7 @@ header {
 
 /* Style des boutons : */
 
-.button img{
+.button img {
   border: 3px black solid;
   border-radius: 5%;
   background-color: white;
@@ -153,28 +211,268 @@ header {
 .grid {
   align-items: stretch;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: stretch;
 }
 
 /* Les deux différents dégradés de couleur qui gèrent le fond des divs paragraph, pour chaque section : grad1 est le paragraphe du dessus et grad2 celui du dessous pour faire un semblant de dégradé qui se prolonge entre les deux. Et grad3 est pour le loooong paragraphe contenant les informations pour pouvoir quand même ressentir le dégradé.*/
 
 #grad1 {
-  background: linear-gradient(0deg,#feae34 0%,#fee761 100%);
+  background: linear-gradient(0deg, #feae34 0%, #fee761 100%);
 }
 
 #grad2 {
-  background: linear-gradient(0deg,#f77622 0%,#feae34 100%);
+  background: linear-gradient(0deg, #f77622 0%, #feae34 100%);
 }
 
 #grad3 {
-  background: linear-gradient(0deg,#f77622 0%,#fee761 100%);
+  background: linear-gradient(0deg, #f77622 0%, #fee761 100%);
 }
 
 /* Style de l'intégration vidéo et des Captures d'Ecran : */
 
-iframe, #screenshot {
+iframe,
+#screenshot {
+  border: 3px black solid;
+  border-radius: 5px;
+  box-shadow: 3p/* ---------- GLOBAL ---------- */
+
+/* On importe la police d'écriture utilisée pour le site (Montserrat) et toutes ses variantes de taille.*/
+
+@import url(
+"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Défini l'arrière plan du site, qu'il soit fixe, qu'il soit centré sur l'écran, qu'il ne se repète pas (sinon il se répete comme un patern si il n'est pas assez grand pour l'écran), qu'il prenne toute la taille de l'écran et soit affiché derrière tout le contenu de la page web. */
+
+html {
+  background-attachment: fixed;
+  background-image: url(https://cdna.artstation.com/p/assets/images/images/053/741/070/large/justin-r-background1a1.jpg?1662931683);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ---------- TOP ---------- */
+
+/* Définit le style de la div top (ou il y a le logo du site) ainsi que la taille de l'image.*/
+
+.top {
+  background-color: #fee761;
+  border: 3px black solid;
+  border-radius: 5px;
+  color: #e43b44;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.top img {
+  height: 33%;
+  width: 33%;
+}
+
+/* Permet d'épingler le header (contenant la div top et menu en haut de l'écran). */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* ---------- MENU ---------- */
+
+/* Permet de rendre "malleable" la div menu pour pouvoir faire en sorte que chacun des boutons prennent 1/3 de la place et qu'ils s'étendent sur toute la largeur de l'écran (codé dans le .menu div).*/
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Style des liens du menu et de la div */
+
+.menu a {
+  color: black;
+  text-decoration: none;
+}
+
+.menu div {
+  align-items: center;
+  background-color: #fee761;
   border: 3px black solid;
   border-radius: 5px;
   box-shadow: 3px 3px 10px black;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  width: 33%;
+}
+
+/*Affiche le sous-menu quand l'utilisateur "hover" le menu et laisse afficher le menu quand l'utilisateur à sa souris sur le sous-menu.*/
+
+.menu > div:hover .sub-menu li {
+  transform: scale(1);
+}
+
+.menu > div:hover .sub-menu {
+  transform: scale(1);
+}
+
+/* Fait en sorte que quand l'utilisateur passe sa souris sur un des boutons du menu, il change de couleur ainsi que le texte présent dessus.*/
+
+.menu > div:hover {
+  background-color: #e43b44;
+  color: white;
+}
+
+/* ---------- SUBMENU ---------- */
+
+/* Style et animation du menu, transform: scale(0) -> pour que le menu soit invisible au départ, transform-origin: left -> pour que le sub-menu parte de la gauche quand il s'ouvre, transition: all 300ms ease-in-out -> permet de faire une transition fluide en 300ms */
+
+.sub-menu {
+  padding: 0;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: left;
+  transition: all 300ms ease-in-out;
+  top: 80%;
+  width: 100%;
+}
+
+.sub-menu p {
+  background: #fee761;
+  border: 3px black solid;
+  border-radius: 5px;
+  color: black;
+  margin: 0px;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.sub-menu p:hover {
+  background: #e43b44;
+  cursor: pointer; /* Change le style du curseur quand on passe la souris dessus */
+}
+
+#sub-menu_link {
+  color: black;
+  text-decoration: none; /* Permet de ne pas souligner les liens du sous-menu */
+}
+
+/* ---------- CONTENT ---------- */
+
+/* Style des divs contenant les titres et les paragraphes ainsi que des images illustartives et des titres des partie : */
+
+.title {
+  background-color: #e43b44;
+  border: 3px solid black;
+  color: black;
+  text-align: center;
+}
+
+.paragraph {
+  background-color: #fee761;
+  border: 3px solid black;
+  box-shadow: 3px 3px 10px black;
+  color: black;
+  padding: 1%;
+}
+
+.title,
+.paragraph {
+  border-radius: 5px;
+}
+
+#center{
+  text-align: center;
+}
+
+/*display:block, margin-left et margin-right: auto pour pouvoir center l'image au centre de l'écran.
+-webkit-transition et transition pour définir la durée que l'image met à retourner à sa taille initiale.*/
+
+#image {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 25%;
+  width: 25%;
+  border: 3px black solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px black;
+}
+
+/*Pour pouvoir agrandir l'image en 0.2s par rapport au centre quand l'utilisateur passe la souris dessus. animation-direction:alternate pour faire en sortie que l'image est une animation dans le sens retour, transform/transition/-webkit-transition définissent les paramètres de l'animation.*/
+
+#image:hover {
+  animation-direction: alternate;
+  transform: scale(2, 2);
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+}
+
+/* text-align, box-sizing : Pour bien que les boutons (images cliquables, pas des boutons html) s'alignent entre eux et par rapport à la largeur de l'écran ; padding : Pour qu'il y ai un écrat minimum entre les boutons (pour pas qu'ils fusionnent entre eux lorsque la fenêtre est trop étroite).*/
+
+.button {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* Permet d'augementer la taille des boutons en 0.1s lorsque l'utilisateur passe la souris dessus. */
+
+.button:hover {
+  animation-direction: alternate;
+  transform: scale(1.12, 1.12);
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+/* Style des boutons : */
+
+.button img {
+  border: 3px black solid;
+  border-radius: 5%;
+  background-color: white;
+  height: 144px;
+  width: 144px;
+}
+
+/* grid : Div qui contient tout les boutons et qui gère leur position sous forme de colonnes.*/
+
+.grid {
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: stretch;
+}
+
+/* Les deux différents dégradés de couleur qui gèrent le fond des divs paragraph, pour chaque section : grad1 est le paragraphe du dessus et grad2 celui du dessous pour faire un semblant de dégradé qui se prolonge entre les deux. Et grad3 est pour le loooong paragraphe contenant les informations pour pouvoir quand même ressentir le dégradé.*/
+
+#grad1 {
+  background: linear-gradient(0deg, #feae34 0%, #fee761 100%);
+}
+
+#grad2 {
+  background: linear-gradient(0deg, #f77622 0%, #feae34 100%);
+}
+
+#grad3 {
+  background: linear-gradient(0deg, #f77622 0%, #fee761 100%);
+}
+
+/* Style de l'intégration vidéo et des Captures d'Ecran : */
+
+iframe,
+#screenshot {
+  border: 3px black solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px black;
+}
+x 3px 10px black;
 }
